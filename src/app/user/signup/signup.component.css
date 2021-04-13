@@ -1,0 +1,16 @@
+mat-form-field {
+    width: 100%;
+}
+
+.container {
+    border-radius: 10px;
+    padding: 7px;
+    background-color: rgb(0, 119, 255);
+    height: 50%;
+    box-shadow: rgb(41, 228, 24) 5px 5px 5px;
+}
+
+button {
+    box-shadow: rgb(70, 70, 202);
+    background-color: rgb(25, 174, 185);
+}

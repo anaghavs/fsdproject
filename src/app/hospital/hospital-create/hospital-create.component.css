@@ -1,0 +1,19 @@
+mat-form-field,
+textarea {
+    width: 100%;
+}
+
+.container {
+    margin-top: 3%;
+    border-radius: 10px;
+    padding: 7px;
+    width: 50%;
+    background-color: rgb(0, 119, 255);
+    height: 100;
+    box-shadow: rgb(41, 228, 24) 5px 5px 5px;
+}
+
+button {
+    box-shadow: rgb(70, 70, 202);
+    background-color: rgb(25, 174, 185);
+}

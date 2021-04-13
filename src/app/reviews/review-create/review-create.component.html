@@ -1,0 +1,57 @@
+<mat-card>
+  <form (submit)="onAddReview(reviewForm)" #reviewForm="ngForm">
+      <mat-form-field>
+          <input
+           matInput
+           type="select"
+           name="title"
+           ngModel
+           required
+           placeholder="Hotel Name(Name should be exactly same as in the available list)"
+           #title="ngModel">
+        </mat-form-field>
+      <mat-form-field>
+          <input
+           matInput
+           type="number"
+           min="1"
+           max="5"
+           name="rating"
+           ngModel
+           required
+           placeholder="Overall Rating (1-5)"
+           #rating="ngModel">
+           <mat-error *ngIf="rating.invalid">Please enter a valid rating.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea
+           matInput
+           rows="5"
+           name="review"
+           maxlength="240"
+           ngModel
+           required
+           placeholder="Complete Review (max. 240 characters)"
+           #review="ngModel">
+          </textarea>
+           <mat-error *ngIf="review.invalid">Please enter a valid review.</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <textarea
+           matInput
+           rows="1"
+           name="username"
+           maxlength="40"
+           ngModel
+           required
+           placeholder="Username"
+           #username="ngModel">
+          </textarea>
+           <mat-error *ngIf="username.invalid">Please enter a valid username.</mat-error>
+        </mat-form-field>
+        <button
+        mat-raised-button
+        color="primary"
+         type="submit">Save Review</button>
+  </form>
+</mat-card>

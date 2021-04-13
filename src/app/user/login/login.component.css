@@ -1,0 +1,21 @@
+mat-form-field {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+    color: rgb(36, 130, 252), 255) font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    border-radius: 10px;
+    padding: 7px;
+    background-color: rgb(77, 140, 235);
+    height: 50%;
+    box-shadow: rgb(59, 236, 43) 5px 5px 5px;
+}
+
+button {
+    box-shadow: rgb(70, 70, 202);
+    background-color: rgb(25, 174, 185);
+}

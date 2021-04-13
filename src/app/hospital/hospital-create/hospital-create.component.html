@@ -1,0 +1,88 @@
+<div class="container">
+    <mat-card>
+        <form (submit)="onAddHospital(hospitalForm)" #hospitalForm="ngForm">
+            <mat-form-field appearance="fill">
+                Name of the Hospital <input matInput type="text" name="hospital" [(ngModel)]="hospitalNameInput" required placeholder="Hospital Name (max. 30 characters)" #name="ngModel">
+                <mat-error *ngIf="title.invalid">Please enter a Hospital name.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                Enter State<textarea matInput rows="1" name="state" ngModel required placeholder="State location (max. 30 characters)" #state="ngModel">
+            </textarea>
+                <mat-error *ngIf="state.invalid">Please enter a State.</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                Enter District <textarea matInput rows="1" name="district" ngModel placeholder="District and landmark (max. 30 characters)" #district="ngModel">
+            </textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                Enter the Charge <textarea matInput rows="1" name="fee" ngModel placeholder="Fee" #year="ngModel">
+            </textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                Description<textarea matInput rows="1" name="description" ngModel placeholder="Hospital Description (max. 30 characters)" #description="ngModel">
+           </textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                Hospital Type<textarea matInput rows="1" name="type" ngModel placeholder="Hospital Type (eg:gen hospital,superspeciality etc)" #type="ngModel">
+         </textarea>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                Rating <textarea matInput rows="1" name="rating" ngModel placeholder="Give rating" #genre="ngModel">
+       </textarea>
+            </mat-form-field>
+            <!-- <mat-form-field>
+        <textarea
+         matInput
+         rows="1"
+         name="header"
+         ngModel
+         placeholder="No"
+         #header="ngModel">
+        </textarea>
+    </mat-form-field>
+    <mat-form-field>
+        <textarea
+         matInput
+         rows="1"
+         name="zeroByte"
+         ngModel
+         placeholder="Check-out Time"
+         #zeroByte="ngModel">
+        </textarea>
+    </mat-form-field> -->
+            <button mat-raised-button color="primary" type="submit">Save hospital </button>
+        </form>
+    </mat-card>
+
+
+    <mat-card>
+        <form (submit)="onAddReview(reviewForm)" #reviewForm="ngForm">
+            <mat-form-field>
+                Name of the hospital <input matInput type="text" name="name" ngModel required placeholder="Hotel Name" #name="ngModel"> {{ hospitalTitleInput }}
+            </mat-form-field>
+            <mat-form-field>
+                Rating <input matInput type="number" min="1" max="5" name="rating" ngModel required placeholder="Overall Rating (1-5)" #rating="ngModel">
+                <mat-error *ngIf="rating.invalid">Please enter a valid rating.</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                Write review <textarea matInput rows="5" name="review" maxlength="240" ngModel required placeholder="Complete Review (max. 240 characters)" #review="ngModel">
+          </textarea>
+                <mat-error *ngIf="review.invalid">Please enter a valid review.</mat-error>
+            </mat-form-field>
+            <!--<mat-form-field>
+          <textarea
+           matInput
+           rows="1"
+           name="username"
+           maxlength="40"
+           ngModel
+           required
+           placeholder="Username"
+           #username="ngModel">
+          </textarea>
+           <mat-error *ngIf="username.invalid">Please enter a valid username.</mat-error>
+        </mat-form-field>-->
+            <button mat-raised-button color="primary" type="submit">Save Review</button>
+        </form>
+    </mat-card>
+</div>

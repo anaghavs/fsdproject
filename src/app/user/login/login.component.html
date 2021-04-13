@@ -1,0 +1,19 @@
+<div class="container">
+    <mat-card>
+        <h1>SIGNIN HERE!</h1>
+        <form #loginForm="ngForm" (submit)="login(loginForm)">
+            <p> ENTER EMAIL AND PASSWORD</p>
+            <mat-form-field appearance="fill">
+
+                <input matInput type="email" name="email" ngModel placeholder="E-mail" #emailInput="ngModel" required email>
+                <mat-error *ngIf="emailInput.invalid">Please enter a valid email address.</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+
+                <input matInput type="password" name="password" ngModel #passwordInput="ngModel" placeholder="Password" required>
+                <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="" type="submit">Login</button>
+        </form>
+    </mat-card>
+</div>

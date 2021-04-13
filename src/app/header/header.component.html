@@ -1,0 +1,41 @@
+<mat-toolbar color="primary">
+    <span>
+    <a routerLink="/"> HOSPITAL REVIEW APPLICATION</a>
+  </span>
+    <span class="void"></span>
+    <ul>
+        <!--list items displayed based upon level of authentication of the user-->
+        <li *ngIf="userIsAuthenticated || adminIsAuthenticated">
+            <a mat-button routerLink="/create" routerLinkActive="mat-accent">ADD A HOSPITAL</a>
+        </li>
+
+        <li *ngIf="!userIsAuthenticated && !adminIsAuthenticated">
+            <a mat-button routerLink="/login" routerLinkActive="mat-accent">SIGN IN</a>
+        </li>
+
+        <li *ngIf="!userIsAuthenticated && !adminIsAuthenticated">
+            <a mat-button routerLink="/signup" routerLinkActive="mat-accent">SIGN UP</a>
+        </li>
+
+        <li *ngIf="adminIsAuthenticated">
+            <button mat-button routerLink="/add-admin" routerLinkActive="mat-accent">Add Admin</button>
+        </li>
+
+        <!-- <li *ngIf="adminIsAuthenticated">
+      <button mat-button routerLink="/takedown" routerLinkActive="mat-accent" >DMCA Takedown Procedure</button>
+  </li> -->
+        <li *ngIf="adminIsAuthenticated">
+            <button mat-button routerLink="/deactivate" routerLinkActive="mat-accent">User De-Activation</button>
+        </li>
+        <!-- <li>
+        <button mat-button routerLink="/policy" routerLinkActive="mat-accent" >Security Policy</button>
+    </li>
+    <li>
+        <button mat-button routerLink="/dmca" routerLinkActive="mat-accent" >DMCA Policy</button>
+    </li> -->
+        <li *ngIf="userIsAuthenticated || adminIsAuthenticated">
+            <button mat-button (click)="onLogout()">LOGOUT</button>
+        </li>
+
+    </ul>
+</mat-toolbar>

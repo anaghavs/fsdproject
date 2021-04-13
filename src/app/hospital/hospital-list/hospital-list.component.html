@@ -1,0 +1,33 @@
+<h2>About</h2>
+<p>Review the hospitals ! SignUp if you are new here!</p>
+<hr>
+<input matInput type="text" placeholder="Search A Hospital" [(ngModel)]="searchWord">
+<hr>
+
+<mat-accordion multi="true" *ngIf="hospital.length > 0">
+    <mat-expansion-panel *ngFor="let hospital of hospital | hospitalFilter:searchWord">
+        <mat-expansion-panel-header>
+            Hospital {{ hospital.name}} in {{ hospital.state }}
+        </mat-expansion-panel-header>
+        <p>District: {{ hospital.district }} <br> Fee: {{ hospital.fee}} <br> Description: {{ hospital.description }} <br> Hospital Type: {{hospital.type }} <br> Hospital Rating: {{ hospital.rating }} <br>
+        </p>
+        <hr>
+        <div *ngFor="let review of reviews">
+            <span *ngIf="review.hospitalName === hospital.name">
+        <strong>Rating: </strong>{{ review.rating }}
+        <br>
+        <strong>Review: </strong>{{ review.review }}
+        <br>
+        <strong>From user: </strong>{{ review.username }}
+        <hr>
+      </span>
+        </div>
+        <mat-action-row *ngIf="userIsAuthenticated || adminIsAuthenticated">
+            <a mat-button color="primary" [routerLink]="['/review-create', hospital.id]">Add a Review</a>
+            <span *ngIf="adminIsAuthenticated">
+           <button  mat-button color="warn" (click)="onDelete(hospital.id)">Delete Hospitak</button>
+         </span>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="hospital.length <= 0">No Hospital yet</p>

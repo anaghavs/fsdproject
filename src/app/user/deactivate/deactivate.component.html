@@ -1,0 +1,27 @@
+<mat-card>
+  <form #deactivateForm="ngForm" (submit)="deactivateUser(deactivateForm)">
+    <mat-form-field>
+      <input matInput type="text"
+      name="email"
+      ngModel
+      placeholder="Existing User's Email to Deactivate"
+      #email="ngModel"
+      required
+      >
+      <mat-error *ngIf="email.invalid">Please enter a valid username.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput
+      type="password"
+      name="password"
+      ngModel
+      #passwordInput="ngModel"
+      placeholder="New Password"
+      required>
+      <mat-error *ngIf="passwordInput.invalid">Please enter a valid password.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="" type="submit">Deactivate User</button>
+    <button mat-raised-button color="" type="click" (click)="activateUser(deactivateForm)">Activate User</button>
+
+  </form>
+</mat-card>
